@@ -9,7 +9,7 @@ module Subscriber
   def self.parse(input)
     input.split(", ").map do |string|
       first_part, second_part = string.strip.split(" at ")
-      quantity = first_part.chars[0].to_i
+      quantity = first_part[0].to_i
       type = first_part.chars.drop(1).join.strip
       price = second_part.to_f
 

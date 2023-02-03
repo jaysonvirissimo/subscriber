@@ -14,7 +14,7 @@ module Subscriber
 
     def import_duty
       if qualifies_for_duty?
-        (quantity * price * IMPORT_DUTY)
+        (quantity * price * IMPORT_DUTY).round(2)
       else
         0
       end
@@ -26,6 +26,18 @@ module Subscriber
       else
         (quantity * price * SALES_TAX).round(2)
       end
+    end
+
+    def taxes
+      (import_duty + sales_tax)
+    end
+
+    def total
+      (quantity * price + taxes).round(2)
+    end
+
+    def to_s
+      "#{quantity} #{type}: #{total}"
     end
 
     private

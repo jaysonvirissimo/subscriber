@@ -7,7 +7,7 @@ RSpec.describe Subscriber do
 
   describe ".parse" do
     subject do
-      described_class.parse("2 book at 12.49, 1 music CD at 14.99")
+      described_class.parse("2 book at 12.49\n1 music CD at 14.99")
     end
 
     specify { expect(subject.count).to eq(2) }

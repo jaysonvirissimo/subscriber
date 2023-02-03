@@ -14,7 +14,16 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
+After installing locally, open the console with `bin/console`:
+
 ```
+Subscriber[
+<<~HEREDOC
+  1 imported box of chocolates at 10.00
+  1 imported bottle of perfume at 47.50
+HEREDOC
+]
+=>
 ```
 
 ## Development

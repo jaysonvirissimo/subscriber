@@ -1,6 +1,6 @@
 require "set"
 
-module Subscriber 
+module Subscriber
   class SalesTaxChecker
     def initialize(type)
       @type = type.gsub("imported", "").strip
@@ -20,7 +20,7 @@ module Subscriber
 
     FOOD = [
       "chocolate bar",
-      "box of chocolates",
+      "box of chocolates"
     ].to_set.freeze
 
     MEDICAL_PRODUCTS = [

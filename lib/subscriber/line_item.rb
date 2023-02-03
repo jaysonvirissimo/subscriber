@@ -21,7 +21,11 @@ module Subscriber
     end
 
     def sales_tax
-      (quantity * price * SALES_TAX).round(2)
+      if SalesTaxChecker.new(type).exempt?
+        0
+      else
+        (quantity * price * SALES_TAX).round(2)
+      end
     end
 
     private

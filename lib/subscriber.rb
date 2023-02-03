@@ -2,6 +2,7 @@
 
 require_relative "subscriber/version"
 require_relative "subscriber/line_item"
+require_relative "subscriber/sales_tax_checker"
 
 module Subscriber
   class Error < StandardError; end

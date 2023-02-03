@@ -1,8 +1,6 @@
 RSpec.describe Subscriber::LineItem do
   describe "import_duty" do
-    subject do
-      described_class.new(1, type, 10.00)
-    end
+    subject { described_class.new(1, type, 10.00) }
 
     context "when imported" do
       let(:type) { "imported box of chocolates" }
@@ -18,10 +16,18 @@ RSpec.describe Subscriber::LineItem do
   end
 
   describe "#sales_tax" do
-    subject do
-      described_class.new(1, "music CD", 14.99)
+    subject { described_class.new(1, type, 14.99) }
+
+    context "when not exempt" do
+      let(:type) { "music CD" }
+
+      specify { expect(subject.sales_tax).to eq(1.50) }
     end
 
-    specify { expect(subject.sales_tax).to eq(1.50) }
+    context "when exempt" do
+      let(:type) { "headache pills" }
+
+      specify { expect(subject.sales_tax).to be_zero }
+    end
   end
 end

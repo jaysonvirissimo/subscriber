@@ -4,13 +4,9 @@ Take in a shopping basket, and return receipt details including sales tax and im
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Clone the repo locally, and from inside the `subscriber` directory, run:
 
-    $ bundle add subscriber
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install subscriber
+    $ bin/setup
 
 ## Usage
 

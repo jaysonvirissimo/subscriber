@@ -15,7 +15,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ## Usage
 
 After installing locally using `bin/setup`, open the console with `bin/console`.
-Put a multiline string between `Subscribe[]` like the following:
+Put a multiline string between `Subscriber[]` like the following:
 ```
 Subscriber[
 <<~HEREDOC

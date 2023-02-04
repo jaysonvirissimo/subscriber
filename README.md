@@ -14,7 +14,8 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-After installing locally, open the console with `bin/console`:
+After installing locally using `bin/setup`, open the console with `bin/console`.
+Put a multiline string between `Subscribe[]` like the following:
 ```
 Subscriber[
 <<~HEREDOC
@@ -22,7 +23,9 @@ Subscriber[
   1 imported bottle of perfume at 47.50
 HEREDOC
 ]
-=>
+```
+It'll print out the receipt details like so:
+```
 1 imported box of chocolates: 10.50
 1 imported bottle of perfume: 54.65
 Sales Taxes: 7.65

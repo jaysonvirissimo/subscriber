@@ -3,6 +3,7 @@
 module Subscriber
   class LineItem
     IMPORT_DUTY = 0.05 # 5%
+    ROUNDING_VALUE = 20
     SALES_TAX = 0.10 # 10%
     attr_reader :quantity, :type, :price
 
@@ -29,7 +30,7 @@ module Subscriber
     end
 
     def taxes
-      (import_duty + sales_tax)
+      ((import_duty + sales_tax) * ROUNDING_VALUE).ceil / ROUNDING_VALUE.to_f
     end
 
     def total
@@ -37,7 +38,7 @@ module Subscriber
     end
 
     def to_s
-      "#{quantity} #{type}: #{total}"
+      "#{quantity} #{type}: #{sprintf("%.2f", total)}"
     end
 
     private
